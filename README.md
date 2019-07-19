@@ -5,7 +5,7 @@ Friday, July 19, 2019
 bikeshare-project.py
 
 ### Description
-this project uses python code (& interactive questioning) to swiftly move through data according to the users desires about bike rentals in three cities: newyork, chicago, and washington.
+*this project uses python code (& interactive questioning) to swiftly move through data according to the users desires about bike rentals in three cities: newyork, chicago, and washington.*
 
 
 ### Files used
