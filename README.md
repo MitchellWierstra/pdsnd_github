@@ -1,8 +1,7 @@
 ### Date created
 Friday, July 19, 2019
 
-### Project Title
-bikeshare-project.py
+
 <h1>bikeshare-project.py<h1>
 
 ### Description
