@@ -113,7 +113,7 @@ def day_info(d):       # Asks for a day and returns the day
 
 def load_data(city):
     # Loads data for the asked city
-    print('\nLoading the data... .. .. ..\n')
+
     df = pd.read_csv(CITY_DATA[city])
 
     # Start Times
@@ -136,7 +136,7 @@ def time_filters(df, time, month, week_day, md):
     Result:
     df - dataframe to be used for final calculation
     '''
-    print('Data loaded. \n')
+    print('Data loaded \n')
     #Filter by Month
     if time == 'month':
         months = ['january', 'february', 'march', 'april', 'may', 'june']
