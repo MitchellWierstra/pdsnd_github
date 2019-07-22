@@ -169,7 +169,7 @@ def month_freq(df):
     '''What is the most common month for start time?
     '''
     # df - dataframe returned from time_filters
-    print('\n *** display the most common month for bike traveling')
+    print('\n <*> display the most common month for bike traveling')
     m = df.month.mode()[0]
     months = ['january', 'february', 'march', 'april', 'may', 'june']
     common_month = months[m - 1].capitalize()
@@ -179,14 +179,14 @@ def day_freq(df):
     '''What is the most common day of week for start time?
     '''
     # df - dataframe returned from time_filters
-    print('\n *** display the most common day of the week for bike rides')
+    print('\n <*> display the most common day of the week for bike rides')
     return df['day_of_week'].value_counts().reset_index()['index'][0]
 
 def hour_freq(df):
     '''What is the most common hour of day for start time?
     '''
     # df - dataframe returned from time_filters
-    print('\n *** display the most common hour of the day for bike rides')
+    print('\n <*> display the most common hour of the day for bike rides')
     df['hour'] = df['Start Time'].dt.hour
     return df.hour.mode()[0]
 
@@ -194,10 +194,10 @@ def stations_stats(df):
     '''What is the most popular start station and most popular end station?
     '''
     # df - dataframe returned from time_filters
-    print("\n*** What is the most popular start station?\n")
+    print("\n <*> What is the most popular start station?\n")
     start_station = df['Start Station'].value_counts().reset_index()['index'][0]
     print (start_station)
-    print("\n*** What is the most popular end station?\n")
+    print("\n <*> What is the most popular end station?\n")
     end_station = df['End Station'].value_counts().reset_index()['index'][0]
     print(end_station)
     return start_station, end_station
@@ -207,7 +207,7 @@ def common_trip(df):
     '''
     # df - dataframe returned from time_filters
     result = df[['Start Station', 'End Station']].groupby(['Start Station', 'End Station']).size().nlargest(1)
-    print('\n*** What was the most popular trip from start to end?')
+    print('\n <*> What was the most popular trip from start to end?')
     return result
 
 
@@ -218,7 +218,7 @@ def trip_duration_stats(df):
         tuple = total ride duration, average ride durations
     '''
     # df - dataframe returned from time_filters
-    print('\n *** What was the total traveling done for 2017 through June, and what was the average time spent on each trip?')
+    print('\n <*> What was the total traveling done for 2017 through June, and what was the average time spent on each trip?')
     df['End Time'] = pd.to_datetime(df['End Time'])
     df['Travel Time'] = df['End Time'] - df['Start Time']
     #sum for total trip time, along with the mean (avg)
@@ -237,14 +237,14 @@ def user_stats(df):
     '''What are the counts of each user type?
     '''
      # df - dataframe returned from time_filters
-    print('\n*** Types of users: subscribers, customers, others\n')
+    print('\n <*> Types of users: subscribers, customers, others\n')
     return df['User Type'].value_counts()
 
 def gender_data(df):
     '''What are the counts of gender?'''
     # df - dataframe returned from time_filters
     try:
-        print('\n*** What is the breakdown of gender among users?\n')
+        print('\n <*> What is the breakdown of gender among users?\n')
         return df['Gender'].value_counts()
     except:
         print('There is no gender data in the source.')
@@ -253,7 +253,7 @@ def birth_years(df):
     '''What is the earliest, latest, and most frequent birth year?'''
     # df - dataframe returned from time_filters
     try:
-        print('\n*** What is the earliest, latest, and most frequent year of birth, respectively?')
+        print('\n <*> What is the earliest, latest, and most frequent year of birth, respectively?')
         earliest = np.min(df['Birth Year'])
         print ("\nThe earliest year of birth is " + str(earliest) + "\n")
         latest = np.max(df['Birth Year'])
